@@ -1,0 +1,42 @@
+Instructions:
+Run sudo cp -a /usr/share/wireplumber/main.lua.d/50-alsa-config.lua /etc/wireplumber/main.lua.d/50-alsa-config.lua
+Run sudo nano /etc/wireplumber/main.lua.d/50-alsa-config.lua
+Add ["session.suspend-timeout-seconds"] = 0 to the end of the apply_properties section
+Run systemctl --user restart wireplumber
+
+Copy these lines to the end of /etc/dnf/dnf.conf:
+fastestmirror=True
+max_parallel_downloads=10
+defaultyes=True
+keepcache=True
+Run sudo dnf upgrade --refresh
+
+Run flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+Run flatpak install flathub org.kde.ark
+
+Download and extract the Fedora Config zip file
+Copy Bibata-Modern-Classic to /usr/share/icons/
+Add "Inherits=Bibata-Modern-Classic" to /usr/share/icons/default/index.theme
+Copy everything from the config folder to ~/.config
+Log in and out of Sway
+
+Install git, neofetch, htop, flameshot, mediawriter and ranger
+
+Run ranger --copy-config
+
+Copy these lines to the end of ~/.bashrc
+# Aliases
+# format: alias shortcut='command'
+alias ls='ranger'
+alias swayconf='nano ~/.config/sway/config'
+alias waybarconf='nano ~/.config/waybar/config'
+alias waybarcss='nano ~/.config/waybar/style.css'
+alias footconf='nano ~/.config/foot/foot.ini'
+alias roficonf='nano ~/.config/rofi/config.rasi'
+alias dnfconf='sudo nano /etc/dnf/dnf.conf'
+alias bashrc='nano ~/.bashrc'
+
+# Additional env variables
+export RANGER_LOAD_DEFAULT_RC=FALSE
+
+
