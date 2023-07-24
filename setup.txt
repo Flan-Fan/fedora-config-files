@@ -20,7 +20,7 @@ Add "Inherits=Bibata-Modern-Classic" to /usr/share/icons/default/index.theme
 Copy everything from the config folder to ~/.config
 Log in and out of Sway
 
-Install git, neofetch, htop, flameshot, mediawriter and ranger
+Install git, neofetch, htop, flameshot, mediawriter, openh264 and ranger
 
 Run ranger --copy-config
 
